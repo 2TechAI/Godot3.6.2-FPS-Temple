@@ -1,0 +1,231 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://data/scripts/menu/menu.gd" type="Script" id=1]
+[ext_resource path="res://data/scenes/main.tscn" type="PackedScene" id=2]
+
+[node name="menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+game_scene = ExtResource( 2 )
+
+[node name="bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.15, 0.17, 0.2, 1 )
+
+[node name="center_container" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="main_panel" type="PanelContainer" parent="center_container"]
+margin_left = 500.0
+margin_top = 199.0
+margin_right = 780.0
+margin_bottom = 521.0
+rect_min_size = Vector2( 280, 320 )
+
+[node name="main" type="VBoxContainer" parent="center_container/main_panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 273.0
+margin_bottom = 315.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="title_spacer" type="Control" parent="center_container/main_panel/main"]
+margin_right = 266.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="game_title" type="Label" parent="center_container/main_panel/main"]
+margin_top = 30.0
+margin_right = 266.0
+margin_bottom = 44.0
+text = "FPS 突击战场"
+align = 1
+
+[node name="title_sep" type="HSeparator" parent="center_container/main_panel/main"]
+margin_top = 64.0
+margin_right = 266.0
+margin_bottom = 68.0
+
+[node name="start" type="Button" parent="center_container/main_panel/main"]
+margin_top = 88.0
+margin_right = 266.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 200, 40 )
+text = "开始游戏"
+
+[node name="multiplayer" type="Button" parent="center_container/main_panel/main"]
+margin_top = 148.0
+margin_right = 266.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 200, 40 )
+text = "局域网联机"
+
+[node name="settings" type="Button" parent="center_container/main_panel/main"]
+margin_top = 208.0
+margin_right = 266.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 200, 40 )
+text = "设置"
+
+[node name="quit" type="Button" parent="center_container/main_panel/main"]
+margin_top = 268.0
+margin_right = 266.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 200, 40 )
+text = "退出游戏"
+
+[node name="settings" type="PanelContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -180.0
+margin_right = 200.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 400, 360 )
+
+[node name="settings_vbox" type="VBoxContainer" parent="settings"]
+margin_right = 400.0
+margin_bottom = 360.0
+custom_constants/separation = 14
+alignment = 1
+
+[node name="settings_title" type="Label" parent="settings/settings_vbox"]
+margin_top = 10.0
+margin_right = 400.0
+margin_bottom = 45.0
+text = "设置"
+align = 1
+
+[node name="sep1" type="HSeparator" parent="settings/settings_vbox"]
+margin_top = 55.0
+margin_right = 400.0
+margin_bottom = 65.0
+
+[node name="sensitivity_label" type="Label" parent="settings/settings_vbox"]
+margin_top = 75.0
+margin_right = 400.0
+margin_bottom = 100.0
+text = "鼠标灵敏度"
+align = 1
+
+[node name="sensitivity_slider" type="HSlider" parent="settings/settings_vbox"]
+margin_top = 105.0
+margin_right = 350.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 350, 20 )
+min_value = 1.0
+value = 20.0
+
+[node name="volume_label" type="Label" parent="settings/settings_vbox"]
+margin_top = 135.0
+margin_right = 400.0
+margin_bottom = 160.0
+text = "主音量"
+align = 1
+
+[node name="volume_slider" type="HSlider" parent="settings/settings_vbox"]
+margin_top = 165.0
+margin_right = 350.0
+margin_bottom = 185.0
+rect_min_size = Vector2( 350, 20 )
+value = 80.0
+
+[node name="sep2" type="HSeparator" parent="settings/settings_vbox"]
+margin_top = 195.0
+margin_right = 400.0
+margin_bottom = 205.0
+
+[node name="back" type="Button" parent="settings/settings_vbox"]
+margin_left = 100.0
+margin_top = 215.0
+margin_right = 300.0
+margin_bottom = 255.0
+rect_min_size = Vector2( 200, 40 )
+text = "返回"
+
+[node name="multiplayer_panel" type="PanelContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -180.0
+margin_right = 200.0
+margin_bottom = 180.0
+
+[node name="mp_vbox" type="VBoxContainer" parent="multiplayer_panel"]
+margin_right = 400.0
+margin_bottom = 360.0
+custom_constants/separation = 14
+alignment = 1
+
+[node name="mp_title" type="Label" parent="multiplayer_panel/mp_vbox"]
+margin_top = 10.0
+margin_right = 400.0
+margin_bottom = 45.0
+text = "局域网联机"
+align = 1
+
+[node name="host_btn" type="Button" parent="multiplayer_panel/mp_vbox"]
+margin_left = 100.0
+margin_top = 55.0
+margin_right = 300.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 200, 40 )
+text = "创建房间"
+
+[node name="join_btn" type="Button" parent="multiplayer_panel/mp_vbox"]
+margin_left = 100.0
+margin_top = 105.0
+margin_right = 300.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 200, 40 )
+text = "加入房间"
+
+[node name="ip_label" type="Label" parent="multiplayer_panel/mp_vbox"]
+margin_top = 155.0
+margin_right = 400.0
+margin_bottom = 180.0
+text = "IP地址"
+align = 1
+
+[node name="ip_edit" type="LineEdit" parent="multiplayer_panel/mp_vbox"]
+margin_left = 100.0
+margin_top = 185.0
+margin_right = 300.0
+margin_bottom = 215.0
+rect_min_size = Vector2( 200, 30 )
+text = "127.0.0.1"
+align = 1
+
+[node name="port_label" type="Label" parent="multiplayer_panel/mp_vbox"]
+margin_top = 225.0
+margin_right = 400.0
+margin_bottom = 250.0
+text = "端口"
+align = 1
+
+[node name="port_edit" type="LineEdit" parent="multiplayer_panel/mp_vbox"]
+margin_left = 100.0
+margin_top = 255.0
+margin_right = 300.0
+margin_bottom = 285.0
+rect_min_size = Vector2( 200, 30 )
+text = "7777"
+align = 1
+
+[node name="back_btn" type="Button" parent="multiplayer_panel/mp_vbox"]
+margin_left = 100.0
+margin_top = 300.0
+margin_right = 300.0
+margin_bottom = 340.0
+rect_min_size = Vector2( 200, 40 )
+text = "返回"
